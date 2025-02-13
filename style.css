@@ -61,3 +61,34 @@ nav {
 header {
     background-color: var(--secondary-color);
 }
+
+.header_container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    .header_image{
+        position: relative;
+    }
+
+    .header_image img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: 0.5rem solid var(--extra-light);
+        border-radius: 2rem;
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .header_image img:nth-child(1) {
+        max-width: 250px;
+        transform: translate(-75%, -50%);
+    }
+
+    .header_image img:nth-child(2) {
+        max-width: 250px;
+        transform: translate(0%, -25%);
+    }
+}
+
