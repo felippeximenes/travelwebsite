@@ -57,3 +57,7 @@ nav {
         color: var(--primary-color);
     }
 }
+
+header {
+    background-color: var(--secondary-color);
+}
