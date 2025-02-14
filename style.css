@@ -105,5 +105,120 @@ nav {
 }
 
 .link a {
-    
+    padding: 0 1rem;
+    color: var(--text-dark);
+    transition: 0.3s;
 }
+
+.link a:hover{
+    color: var(--primary-color);
+}
+
+header {
+    background-color: var(--secondary-color);
+}
+
+.header_container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.header_image {
+    position: relative;
+}
+
+.header_image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 0.5rem solid var(--extra-light);
+    border-radius: 2rem;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.header_image img:nth-child(1) {
+    max-width: 350px;
+    transform: translate(-75%, -50%);
+}
+
+
+.header_image img:nth-child(2) {
+    max-width: 250px;
+    transform: translate(0%, -25%);
+}
+
+.header_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_content > div {
+    max-width: 400px;
+    display: grid;
+    gap: 1rem;
+}
+
+.header_content .sub_header {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.header_content h1 {
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: 800;
+    color: var(--text-dark);
+
+}
+
+.header_content .action_btns {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.story {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    cursor: pointer;
+}
+
+.video_image {
+    position: relative;
+}
+
+.video_image img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.video_image span {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, 50%);
+}
+
+.video_image span i {
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: red;
+    background-color: var(--extra-light);
+    border-radius: 100%;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.story > span{
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
