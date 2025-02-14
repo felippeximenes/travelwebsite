@@ -222,3 +222,62 @@ header {
     color: var(--text-dark);
 }
 
+.destination_nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.destination_nav span {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-content: center;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 100%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.3;
+}
+
+.destination_nav span:hover{
+    color: var(--extra-light);
+    background-color: var(--primary-color);
+}
+
+.destination_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.destination_card {
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;
+    cursor: pointer;
+}
+
+.destination_card img {
+    border-radius: 1rem;
+}
+
+.destination_details {
+    position: absolute;
+    width:  calc(100% - 2rem);
+    padding: 1rem;
+    bottom: -6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: var(--extra-light);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.destination__card:hover .destination__details {
+    bottom: 1rem;
+  }
+  
