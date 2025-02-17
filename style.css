@@ -397,5 +397,36 @@ header {
 }
 
 .subscribe {
-    display: grid;
+    background-color: var(--secondary-color);
 }
+
+.subscribe_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.subscribe_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscribe_form form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    background-color: var(--extra-light);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 5rem;
+}
+
+.subscribe_form input {
+    width: 100%;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 5rem;
+    font-size: 1rem;
+}
+
