@@ -327,6 +327,7 @@ header {
 
 .ratting {
     color: goldenrod;
+    padding: 8px;
 }
 
 
@@ -336,4 +337,65 @@ header {
     justify-content: space-between;
 }
 
-.price
+.price span {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.book_now {
+    padding: 0.5rem 1.5rem;
+    color: var(--primary-color);
+    outline: none;
+    border: 1px solid var(--primary-color);
+    border-radius: 5rem;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.book_now:hover {
+    color: var(--extra-light);
+    background-color: var(--primary-color);
+}
+
+.gallary_container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+}
+
+.image_gallary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gallary_col {
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+}
+
+.gallary_col img {
+    border-radius: 1rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallary_content{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.gallary_content > div {
+    max-width: 400px;
+}
+
+.gallary_container .section_subtitle {
+    margin-bottom: 2rem;
+}
+
+.subscribe {
+    display: grid;
+}
