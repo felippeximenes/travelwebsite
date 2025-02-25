@@ -1,6 +1,13 @@
-const destinationContainer = document.querySelector('.destination_container')
+const myObserver = new IntersectionObserver((entries) => {
+    entries.forEach ((entry) => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('show')
+        } else {
+            entry.target.classList.remove('show')
+        }
+    })
+})
 
+const elements = document.querySelectorAll('.hidden')
 
-    console.log(destinationContainer)
-
-
+elements.forEach((element) => myObserver.observe(element))

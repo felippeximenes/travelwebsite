@@ -20,7 +20,7 @@
     max-width: var(--max-width);
     margin: auto;
     padding: 5rem 1rem;
-}
+} 
 
 .section_header {
     display: flex;
@@ -123,10 +123,14 @@ header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+}  .hidden {
+    opacity: 0;
 }
 
 .header_image {
     position: relative;
+} .show {
+    opacity: 1;
 }
 
 .header_image img {
@@ -477,6 +481,18 @@ header {
     font-size: 0.8rem;
     color: var(--secondary-color);
     border-top: 1px solid var(--text-light);
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(15px);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transition: all 1s
 }
 
 @media (width < 1200px) {
