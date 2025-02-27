@@ -129,9 +129,18 @@ header {
 
 .header_image {
     position: relative;
-} .show {
-    opacity: 1;
 }
+
+.avatar {
+    transform: translateX(-100%);
+    transition: all 2s;
+}
+
+.avatar1 {
+    transform: translateX(0);
+    transition: all 2s;
+}
+
 
 .header_image img {
     position: absolute;
@@ -486,14 +495,18 @@ header {
 .hidden {
     opacity: 0;
     filter: blur(15px);
-    transition: all 1s;
+    transform: translateX(-100%);
+    transition: all 2s;
 }
 
 .show {
     opacity: 1;
     filter: blur(0);
+    transform: translateX(0);
     transition: all 1s
 }
+
+
 
 @media (width < 1200px) {
     .header_image img:nth-child(1) {
