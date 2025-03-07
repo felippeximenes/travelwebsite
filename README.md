@@ -5,6 +5,11 @@
 ## Description
 This project is a **responsive landing page** with a modern design, using **HTML, CSS, and JavaScript**. The page includes smooth animations, intuitive navigation, and adapts to different screen sizes.
 
+
+https://github.com/user-attachments/assets/d447c8b5-ec60-41af-9a41-805dcd4b7fee
+
+
+
 ## Code Structure
 
 ### 1. **Styling (CSS)**
@@ -65,6 +70,12 @@ ____________________
 
 ## Descrição
 Este projeto é uma **landing page** responsiva com um design moderno, utilizando **HTML, CSS e JavaScript**. A página inclui animações suaves, uma navegação intuitiva e se adapta a diferentes tamanhos de tela.
+
+
+
+https://github.com/user-attachments/assets/211af085-0536-4665-8814-194d92e83fa2
+
+
 
 ## Estrutura do Código
 
