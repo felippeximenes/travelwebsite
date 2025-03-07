@@ -1,3 +1,66 @@
+<h1> 🇺🇸 - English </h1>
+
+# README - Landing Page
+
+## Description
+This project is a **responsive landing page** with a modern design, using **HTML, CSS, and JavaScript**. The page includes smooth animations, intuitive navigation, and adapts to different screen sizes.
+
+## Code Structure
+
+### 1. **Styling (CSS)**
+- The **style.css** file defines the visual identity of the page.
+- Uses CSS variables for easy customization of colors and sizes.
+- Includes responsive styles for **desktop, tablets, and mobile devices**.
+- Applies effects such as **transitions, shadows, and animations** for an enhanced visual experience.
+
+### 2. **HTML - Page Structure**
+- Includes sections like **header**, **destinations**, **travel plans**, **image gallery**, and **footer**.
+- Contains a **subscription form** for email collection.
+- Simple and organized navigation with interactive links.
+
+### 3. **JavaScript - Interactivity**
+- **Scroll animation effect:**
+  - Uses **IntersectionObserver** to add/remove the `.show` class as elements enter the screen.
+  - Enhances page dynamics, making the experience smoother.
+
+```javascript
+const myObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('show')
+        } else {
+            entry.target.classList.remove('show')
+        }
+    });
+});
+
+const elements = document.querySelectorAll('.hidden');
+
+elements.forEach((element) => myObserver.observe(element));
+```
+
+## Features
+✅ Responsive design  
+✅ Scroll animation effects  
+✅ Modern and intuitive layout  
+✅ Well-structured sections  
+
+## Try here
+
+- link: https://quiet-bienenstitch-a8a314.netlify.app/
+
+
+## How to Use
+1. Clone or download the repository.
+2. Open the **index.html** file in a browser.
+3. Explore the landing page and see the effects in action!
+
+____________________
+
+
+<h1> 🇧🇷 - Português </h1>
+
+
 # README - Landing Page
 
 ## Descrição
