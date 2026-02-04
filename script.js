@@ -19,11 +19,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("subscribeForm");
   if (!form) return;
 
-  form.addEventListener("submit", () => {
-    // Dispara um evento no dataLayer que o GTM vai capturar
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // evita reload e garante tracking
+
+    window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "lead_submit",
       form_name: "subscribeForm",
     });
+
+    // opcional: feedback simples pro usuário
+    form.reset();
+    alert("Cadastro enviado!");
   });
 });
