@@ -16,19 +16,18 @@ elements.forEach((element) => myObserver.observe(element));
 window.dataLayer = window.dataLayer || [];
 
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("subscribeForm");
+  // ✅ mudança mínima: pega o form do bloco subscribe (sem precisar de id no HTML)
+  const form = document.querySelector(".subscribe_form form");
   if (!form) return;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault(); // evita reload e garante tracking
 
-    window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "lead_submit",
       form_name: "subscribeForm",
     });
 
-    // opcional: feedback simples pro usuário
     form.reset();
     alert("Cadastro enviado!");
   });
