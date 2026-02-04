@@ -10,7 +10,7 @@ https://github.com/user-attachments/assets/d447c8b5-ec60-41af-9a41-805dcd4b7fee
 
 
 
-## Code Structure
+## Code Structure :)
 
 ### 1. **Styling (CSS)**
 - The **style.css** file defines the visual identity of the page.
