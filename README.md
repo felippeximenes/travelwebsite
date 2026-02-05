@@ -44,6 +44,31 @@ const elements = document.querySelectorAll('.hidden');
 elements.forEach((element) => myObserver.observe(element));
 ```
 
+## Google Tag Manager & Analytics (GTM + GA4)
+
+This project includes the implementation of **Google Tag Manager (GTM)** integrated with **Google Analytics 4 (GA4)**, demonstrating a professional setup for data measurement and tracking.
+
+### What was implemented
+- Proper installation of **Google Tag Manager** on the website
+- **GA4 integration via GTM** (no direct Analytics scripts added to the HTML)
+- Container validation using **Tag Assistant (Preview Mode)**
+- Verification of events and pageviews in **GA4 – Real-time reports**
+
+### How GTM was implemented
+- GTM script inserted inside the `<head>` tag
+- `<noscript>` fallback added right after the opening `<body>` tag, following Google’s official recommendation
+
+This approach ensures:
+- Better code organization
+- Easier addition of new events and conversions
+- Tracking maintenance without requiring new deploys
+- A standard approach used in professional marketing and product projects
+
+### Validation
+- GTM can be identified by inspecting the site’s HTML
+- Events and pageviews were confirmed in GA4 in real time
+
+
 ## Features
 ✅ Responsive design  
 ✅ Scroll animation effects  
@@ -109,7 +134,34 @@ const myObserver = new IntersectionObserver((entries) => {
 const elements = document.querySelectorAll('.hidden');
 
 elements.forEach((element) => myObserver.observe(element));
+
+
 ```
+
+##  Google Tag Manager & Analytics (GTM + GA4)
+
+Este projeto conta com a implementação do **Google Tag Manager (GTM)** integrada ao **Google Analytics 4 (GA4)**, demonstrando um setup profissional de mensuração e tracking.
+
+### O que foi feito
+- Instalação correta do **Google Tag Manager** no site
+- Integração do **GA4 via GTM** (sem inserir scripts do Analytics diretamente no código)
+- Validação do container utilizando **Tag Assistant (Preview Mode)**
+- Verificação de eventos e acessos no **GA4 – Relatórios em Tempo Real**
+
+### Como o GTM foi implementado
+- Script do GTM inserido no `<head>` da página
+- Fallback `<noscript>` logo após a abertura do `<body>`, seguindo a recomendação oficial do Google
+
+Essa abordagem garante:
+- Melhor organização do código
+- Facilidade para adicionar novos eventos e conversões
+- Manutenção de tracking sem necessidade de novos deploys
+- Padrão utilizado em projetos profissionais de marketing e produto
+
+### Validação
+- O GTM pode ser identificado ao inspecionar o HTML do site
+- Eventos e pageviews foram confirmados no GA4 em tempo real
+
 
 ## Funcionalidades
 ✅ Design responsivo
