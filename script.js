@@ -1,4 +1,4 @@
-// Mantém seu código de animação
+
 const myObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
