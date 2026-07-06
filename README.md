@@ -3,7 +3,7 @@
 # README - Landing Page
 
 ## Description
-This project is a **responsive landing page** with a modern design, using **HTML, CSS, and JavaScript**. The page includes smooth animations, intuitive navigation, and adapts to different screen sizes.
+This project is a **responsive landing page** with a modern design, using **HTML, CSS, and JavaScript**. The page includes smooth animations, intuitive navigation, and adapts to different screen sizes!
 
 
 https://github.com/user-attachments/assets/d447c8b5-ec60-41af-9a41-805dcd4b7fee
