@@ -202,7 +202,7 @@ function HowItWorks() {
 
 /* ---------- destinos (carrossel 3D pinado) ---------- */
 function DestinationsRing() {
-  const N = DESTINATIONS.length, R = 460;
+  const N = DESTINATIONS.length, R = 380;
   const ringRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLElement | null)[]>([]);
   const [idx, setIdx] = useState(0);
@@ -220,8 +220,8 @@ function DestinationsRing() {
   });
   return (
     <section id="destinos" ref={wrapRef} style={{ height: "320vh", position: "relative", background: "var(--ink)", color: "var(--paper)" }}>
-      <div style={{ position: "sticky", top: 0, height: "100vh", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-        <div style={{ textAlign: "center", marginBottom: 8 }}>
+      <div style={{ position: "sticky", top: 0, height: "100vh", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center", paddingTop: "clamp(48px, 9vh, 80px)" }}>
+        <div style={{ textAlign: "center", marginBottom: "clamp(48px, 9vh, 80px)" }}>
           <div className="eyebrow">Destinos</div>
           <h2 className="h-serif" style={{ fontSize: "clamp(36px, 4.6vw, 64px)", marginTop: 10 }}>
             Gire o mundo <em style={{ color: "var(--accent-soft)" }}>com o scroll</em>
@@ -237,7 +237,7 @@ function DestinationsRing() {
             ))}
           </div>
         </div>
-        <div style={{ textAlign: "center", height: 70 }}>
+        <div style={{ textAlign: "center", height: 70, marginTop: "clamp(40px, 8vh, 76px)" }}>
           <div style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 32, fontWeight: 300 }}>{DESTINATIONS[idx].name}</div>
           <div style={{ fontSize: 12, letterSpacing: "0.3em", color: "var(--faint)", marginTop: 6 }}>0{idx + 1} / 0{N}</div>
         </div>
