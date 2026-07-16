@@ -17,7 +17,7 @@ export function Hero() {
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >
-      <Reveal className="mx-auto grid max-w-[1200px] min-h-screen grid-cols-1 items-center gap-8 px-6 pt-[calc(5.5rem+2rem)] md:grid-cols-2">
+      <Reveal className="mx-auto grid max-w-[1200px] min-h-screen grid-cols-1 items-center gap-8 px-6 pt-28 md:grid-cols-2">
         <div className="relative order-first min-h-[380px] md:order-none md:min-h-[420px]">
           <motion.span
             aria-hidden="true"
@@ -53,10 +53,10 @@ export function Hero() {
             <p className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-primary before:h-2 before:w-2 before:rounded-full before:bg-primary before:shadow-[0_0_0_4px_rgb(54_133_251_/_0.18)]">
               Agende Agora
             </p>
-            <h1 className="text-[clamp(2.2rem,1.7rem+2.2vw,3.2rem)] leading-[1.15] font-extrabold tracking-tight text-text-dark">
+            <h1 className="font-serif text-[clamp(2.3rem,1.75rem+2.3vw,3.35rem)] leading-[1.15] font-bold text-text-dark">
               Sempre Sorrindo 😊 <br /> agência de viagens
             </h1>
-            <p className="text-base leading-[1.7] text-text-dark opacity-65">
+            <p className="font-body text-base leading-[1.7] text-text-dark opacity-65">
               Torne sua viagem mais agradável conosco. Nós somos a melhor agência de viagem e fornecemos sempre os
               melhores serviços para nossos clientes.
             </p>

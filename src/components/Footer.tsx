@@ -10,10 +10,10 @@ export function Footer() {
     <footer className="bg-text-dark">
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-8 px-6 py-[clamp(4rem,7vw,6.5rem)] text-secondary sm:grid-cols-2 lg:grid-cols-3 lg:gap-14">
         <div>
-          <h3 className="mb-4 text-2xl font-bold">
+          <h3 className="font-heading mb-4 text-2xl font-bold">
             Caminhos<span className="text-primary">.</span>
           </h3>
-          <p className="text-sm leading-[1.7] opacity-75">
+          <p className="font-body text-sm leading-[1.7] opacity-75">
             Explore seus lugares adquados e de sonhos ao redor do mundo. Aqui você pode encontrar o seu destino
             certo.
           </p>

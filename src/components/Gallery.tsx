@@ -36,10 +36,10 @@ export function Gallery() {
 
         <div className="flex flex-col items-center justify-center">
           <div className="max-w-[400px]">
-            <h2 className="mb-4 text-[clamp(1.5rem,1.15rem+1.4vw,2.1rem)] leading-[1.25] font-bold tracking-tight text-text-dark">
+            <h2 className="font-heading mb-4 text-[clamp(1.5rem,1.15rem+1.4vw,2.1rem)] leading-[1.25] font-bold tracking-tight text-text-dark">
               A nossa galeria de viagens, que vai inspirar você.
             </h2>
-            <p className="mb-8 text-base leading-[1.7] text-text-dark opacity-65">
+            <p className="font-body mb-8 text-base leading-[1.7] text-text-dark opacity-65">
               Explore seus lugares adquados e de sonhos ao redor do mundo. Aqui você pode encontrar o seu destino
               certo.
             </p>
