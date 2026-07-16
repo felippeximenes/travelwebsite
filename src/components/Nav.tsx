@@ -27,7 +27,7 @@ export function Nav() {
           : "border-transparent bg-transparent"
       }`}
     >
-      <div className="cursor-pointer text-xl font-bold tracking-tight whitespace-nowrap text-text-dark">
+      <div className="font-heading cursor-pointer text-xl font-bold tracking-tight whitespace-nowrap text-text-dark">
         Caminhos <span className="text-primary">.</span>
       </div>
 

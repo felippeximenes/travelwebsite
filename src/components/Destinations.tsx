@@ -15,10 +15,10 @@ export function Destinations() {
   return (
     <section className="mx-auto max-w-[1200px] px-6 py-[clamp(4rem,7vw,6.5rem)]">
       <Reveal className="mb-14">
-        <h2 className="mb-4 text-[clamp(1.75rem,1.3rem+1.8vw,2.5rem)] font-bold tracking-tight text-text-dark">
+        <h2 className="font-heading mb-4 text-[clamp(1.75rem,1.3rem+1.8vw,2.5rem)] font-bold tracking-tight text-text-dark">
           Explore os melhores destinos
         </h2>
-        <p className="max-w-[600px] text-base leading-[1.7] text-text-dark opacity-65">
+        <p className="font-body max-w-[600px] text-base leading-[1.7] text-text-dark opacity-65">
           Explore os lugares dos seus maiores sonhos. Aqui você pode encontrar seu destino.
         </p>
       </Reveal>

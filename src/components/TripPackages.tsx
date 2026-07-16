@@ -28,10 +28,10 @@ export function TripPackages() {
     <section className="bg-secondary">
       <div className="mx-auto max-w-[1200px] px-6 py-[clamp(4rem,7vw,6.5rem)] text-center">
         <Reveal className="mx-auto">
-          <h2 className="mb-4 text-[clamp(1.75rem,1.3rem+1.8vw,2.5rem)] font-bold tracking-tight text-text-dark">
+          <h2 className="font-heading mb-4 text-[clamp(1.75rem,1.3rem+1.8vw,2.5rem)] font-bold tracking-tight text-text-dark">
             Melhores Pacotes
           </h2>
-          <p className="mx-auto max-w-[600px] text-base leading-[1.7] text-text-dark opacity-65">
+          <p className="font-body mx-auto max-w-[600px] text-base leading-[1.7] text-text-dark opacity-65">
             Explore seus lugares adquados e de sonhos ao redor do mundo. Aqui você pode encontrar o seu destino
             certo.
           </p>
