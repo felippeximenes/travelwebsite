@@ -69,3 +69,55 @@ a:hover { color: var(--accent); }
 }
 
 img { display: block; }
+
+/* nav */
+.nav-links { display: flex; gap: 32px; font-size: 14px; letter-spacing: 0.02em; }
+.nav-burger {
+  display: none; background: none; border: none; cursor: pointer;
+  padding: 8px; flex-direction: column; gap: 5px; z-index: 96; position: relative;
+}
+.burger-line { display: block; width: 22px; height: 2px; background: var(--ink); transition: transform 0.3s, opacity 0.3s; }
+
+.mobile-menu-overlay {
+  position: fixed; inset: 0; background: rgba(23, 26, 30, 0.35); z-index: 94;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+.mobile-menu-overlay.is-open { opacity: 1; pointer-events: auto; }
+
+.mobile-menu {
+  position: fixed; top: 0; right: 0; height: 100vh; width: min(78vw, 320px);
+  background: var(--paper); z-index: 95; box-shadow: -20px 0 60px -20px rgba(23, 26, 30, 0.3);
+  padding: 100px 32px 32px; display: flex; flex-direction: column; gap: 24px;
+  transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.mobile-menu.is-open { transform: translateX(0); }
+.mobile-menu a { font-size: 18px; }
+
+/* grids */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.step-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.steps-wrap { position: relative; min-height: 380px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 64px; }
+
+.scroll-hint {
+  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); z-index: 2;
+  font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--faint);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+
+@media (max-width: 720px) {
+  .container { padding: 0 24px; }
+
+  .nav-links, .nav-cta { display: none; }
+  .nav-burger { display: flex; }
+
+  .grid-3 { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .step-grid { grid-template-columns: 1fr; gap: 20px; align-items: start; }
+  .steps-wrap { min-height: 600px; }
+  .how-sticky { justify-content: flex-start !important; padding-top: 76px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+
+  .scroll-hint { display: none; }
+}

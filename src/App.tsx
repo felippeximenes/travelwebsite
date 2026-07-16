@@ -33,6 +33,7 @@ const TESTIMONIALS = [
 /* ---------- nav + barra de progresso ---------- */
 function Nav() {
   const [on, setOn] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const barRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const onScroll = () => {
@@ -45,13 +46,22 @@ function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+  const closeMenu = () => setMenuOpen(false);
+  const links = (
+    <>
+      <a href="#destinos" onClick={closeMenu}>Destinos</a>
+      <a href="#pacotes" onClick={closeMenu}>Pacotes</a>
+      <a href="#galeria" onClick={closeMenu}>Galeria</a>
+      <a href="#depoimentos" onClick={closeMenu}>Depoimentos</a>
+    </>
+  );
   return (
     <>
       <div ref={barRef} style={{ position: "fixed", top: 0, left: 0, height: 2, width: "100%", background: "var(--accent)", transformOrigin: "0 50%", transform: "scaleX(0)", zIndex: 90 }} />
       <nav style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 80,
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: on ? "14px 48px" : "20px 48px",
+        padding: on ? "14px clamp(20px, 6vw, 48px)" : "20px clamp(20px, 6vw, 48px)",
         background: on ? "rgba(246,244,239,0.88)" : "transparent",
         backdropFilter: on ? "blur(12px)" : "none",
         boxShadow: on ? "0 1px 0 rgba(23,26,30,0.08)" : "none",
@@ -60,14 +70,21 @@ function Nav() {
         <a href="#" style={{ fontFamily: "var(--serif)", fontSize: 26, fontWeight: 500, letterSpacing: "-0.02em" }}>
           Caminhos<span style={{ color: "var(--accent)" }}>.</span>
         </a>
-        <div style={{ display: "flex", gap: 32, fontSize: 14, letterSpacing: "0.02em" }}>
-          <a href="#destinos">Destinos</a>
-          <a href="#pacotes">Pacotes</a>
-          <a href="#galeria">Galeria</a>
-          <a href="#depoimentos">Depoimentos</a>
+        <div className="nav-links">{links}</div>
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <a href="#contato" className="btn--pill-sm btn nav-cta">Entre em contato</a>
+          <button className="nav-burger" aria-label={menuOpen ? "Fechar menu" : "Abrir menu"} onClick={() => setMenuOpen((v) => !v)}>
+            <span className="burger-line" style={{ transform: menuOpen ? "translateY(7px) rotate(45deg)" : "none" }} />
+            <span className="burger-line" style={{ opacity: menuOpen ? 0 : 1 }} />
+            <span className="burger-line" style={{ transform: menuOpen ? "translateY(-7px) rotate(-45deg)" : "none" }} />
+          </button>
         </div>
-        <a href="#contato" className="btn--pill-sm btn">Entre em contato</a>
       </nav>
+      <div className={`mobile-menu-overlay${menuOpen ? " is-open" : ""}`} onClick={closeMenu} />
+      <div className={`mobile-menu${menuOpen ? " is-open" : ""}`}>
+        {links}
+        <a href="#contato" className="btn btn--solid" onClick={closeMenu} style={{ textAlign: "center" }}>Entre em contato</a>
+      </div>
     </>
   );
 }
@@ -108,7 +125,7 @@ function Hero() {
           <a href="#destinos" className="btn btn--ghost">Ver destinos</a>
         </div>
       </div>
-      <div style={{ position: "absolute", bottom: 28, left: "50%", transform: "translateX(-50%)", zIndex: 2, fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase", color: "var(--faint)", display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+      <div className="scroll-hint">
         Role para descer
         <span style={{ width: 1, height: 44, background: "linear-gradient(var(--ink), transparent)" }} />
       </div>
@@ -132,7 +149,7 @@ function Stat({ target, decimal, suffix, label, delay }: { target: number; decim
 function Stats() {
   return (
     <section style={{ borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", position: "relative", zIndex: 3, background: "var(--paper)" }}>
-      <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
+      <div className="stats-grid" style={{ maxWidth: 1240, margin: "0 auto" }}>
         <Stat target={12400} suffix={<span style={{ color: "var(--accent)" }}>+</span>} label="Viajantes" delay={0} />
         <Stat target={48} label="Destinos" delay={80} />
         <Stat target={49} decimal label="Avaliação média" delay={160} />
@@ -169,13 +186,13 @@ function HowItWorks() {
   });
   return (
     <section ref={wrapRef} style={{ height: "300vh", position: "relative" }}>
-      <div style={{ position: "sticky", top: 0, height: "100vh", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+      <div className="how-sticky" style={{ position: "sticky", top: 0, height: "100vh", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "center" }}>
         <div className="container" style={{ width: "100%" }}>
           <div className="eyebrow" style={{ marginBottom: 12 }}>Como funciona</div>
-          <div style={{ position: "relative", minHeight: 380 }}>
+          <div className="steps-wrap">
             {STEPS.map((s, i) => (
-              <div key={s.n} ref={(el) => (stepRefs.current[i] = el)}
-                style={{ position: "absolute", inset: 0, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center", opacity: i === 0 ? 1 : 0 }}>
+              <div key={s.n} ref={(el) => (stepRefs.current[i] = el)} className="step-grid"
+                style={{ position: "absolute", inset: 0, opacity: i === 0 ? 1 : 0 }}>
                 <div>
                   <div style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 20, color: "var(--accent)" }}>{s.n}</div>
                   <h2 className="h-serif" style={{ fontSize: "clamp(40px, 5vw, 72px)", margin: "16px 0 20px" }}>{s.title}</h2>
@@ -227,11 +244,11 @@ function DestinationsRing() {
             Gire o mundo <em style={{ color: "var(--accent-soft)" }}>com o scroll</em>
           </h2>
         </div>
-        <div style={{ perspective: 1400, width: "100%", height: 480, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div ref={ringRef} style={{ position: "relative", width: 300, height: 400, transformStyle: "preserve-3d" }}>
+        <div style={{ perspective: 1400, width: "100%", height: "clamp(300px, 78vw, 480px)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div ref={ringRef} style={{ position: "relative", width: "clamp(190px, 58vw, 300px)", height: "clamp(250px, 77vw, 400px)", transformStyle: "preserve-3d" }}>
             {DESTINATIONS.map((d, i) => (
               <figure key={d.name} ref={(el) => (cardRefs.current[i] = el)}
-                style={{ position: "absolute", inset: 0, margin: 0, borderRadius: 6, overflow: "hidden", backfaceVisibility: "hidden", boxShadow: "0 30px 60px -20px rgba(0,0,0,0.6)", transform: `rotateY(${i * (360 / N)}deg) translateZ(${R}px)` }}>
+                style={{ position: "absolute", inset: 0, margin: 0, borderRadius: 6, overflow: "hidden", backfaceVisibility: "hidden", boxShadow: "0 30px 60px -20px rgba(0,0,0,0.6)", transform: `rotateY(${i * (360 / N)}deg) translateZ(clamp(220px, 60vw, ${R}px))` }}>
                 <img src={d.img} alt={d.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               </figure>
             ))}
@@ -276,7 +293,7 @@ function PackageCard({ p, delay }: { p: (typeof PACKAGES)[number]; delay: number
 function Packages() {
   const r1 = useReveal(), r2 = useReveal<HTMLHeadingElement>(80), r3 = useReveal<HTMLParagraphElement>(160);
   return (
-    <section id="pacotes" className="container" style={{ padding: "140px 48px 100px" }}>
+    <section id="pacotes" className="container" style={{ padding: "140px clamp(20px, 6vw, 48px) 100px" }}>
       <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 32, marginBottom: 64, flexWrap: "wrap" }}>
         <div>
           <div ref={r1} className="eyebrow" style={{ marginBottom: 12 }}>Roteiros assinados</div>
@@ -288,7 +305,7 @@ function Packages() {
           Grupos pequenos, datas fixas, tudo incluído do embarque à volta. Passe o mouse — os cards têm relevo.
         </p>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28 }}>
+      <div className="grid-3">
         {PACKAGES.map((p, i) => <PackageCard key={p.title} p={p} delay={i * 100} />)}
       </div>
     </section>
@@ -354,13 +371,13 @@ function TestimonialCard({ t, delay }: { t: (typeof TESTIMONIALS)[number]; delay
 function Testimonials() {
   const r1 = useReveal(), r2 = useReveal<HTMLHeadingElement>(80);
   return (
-    <section id="depoimentos" style={{ background: "var(--paper-2)", borderTop: "1px solid var(--line)", padding: "120px 48px" }}>
+    <section id="depoimentos" style={{ background: "var(--paper-2)", borderTop: "1px solid var(--line)", padding: "120px clamp(20px, 6vw, 48px)" }}>
       <div style={{ maxWidth: 1240, margin: "0 auto" }}>
         <div ref={r1} className="eyebrow" style={{ marginBottom: 12 }}>Depoimentos</div>
         <h2 ref={r2} className="h-serif" style={{ fontSize: "clamp(38px, 4.6vw, 68px)", margin: "0 0 64px" }}>
           Quem foi, <em style={{ color: "var(--accent)" }}>conta melhor</em>.
         </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 28 }}>
+        <div className="grid-3">
           {TESTIMONIALS.map((t, i) => <TestimonialCard key={t.name} t={t} delay={i * 100} />)}
         </div>
       </div>
@@ -378,7 +395,7 @@ function Newsletter() {
     else setMsg("Digite um e-mail válido.");
   };
   return (
-    <section id="contato" style={{ padding: "140px 48px", textAlign: "center" }}>
+    <section id="contato" style={{ padding: "140px clamp(20px, 6vw, 48px)", textAlign: "center" }}>
       <div ref={reveal} style={{ maxWidth: 760, margin: "0 auto" }}>
         <h2 className="h-serif" style={{ fontSize: "clamp(40px, 5vw, 76px)", lineHeight: 1.05, margin: "0 0 20px" }}>
           Ofertas que <em style={{ color: "var(--accent)" }}>não chegam</em> ao site.
@@ -388,7 +405,7 @@ function Newsletter() {
         </p>
         <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
           <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Seu melhor e-mail"
-            style={{ border: "1px solid #c9c4b8", background: "#fff", borderRadius: 999, padding: "16px 26px", fontSize: 15, fontFamily: "var(--sans)", width: 320, outline: "none", color: "var(--ink)" }} />
+            style={{ border: "1px solid #c9c4b8", background: "#fff", borderRadius: 999, padding: "16px 26px", fontSize: 15, fontFamily: "var(--sans)", width: 320, maxWidth: "100%", outline: "none", color: "var(--ink)" }} />
           <button onClick={subscribe} className="btn btn--solid">Assinar</button>
         </div>
         <div style={{ height: 24, marginTop: 16, fontSize: 14, color: "var(--accent)" }}>{msg}</div>
@@ -401,8 +418,8 @@ function Newsletter() {
 function Footer() {
   const link: React.CSSProperties = { color: "#c9cdd3" };
   return (
-    <footer style={{ background: "var(--ink)", color: "var(--paper)", padding: "90px 48px 40px" }}>
-      <div style={{ maxWidth: 1240, margin: "0 auto", display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 64 }}>
+    <footer style={{ background: "var(--ink)", color: "var(--paper)", padding: "90px clamp(20px, 6vw, 48px) 40px" }}>
+      <div className="footer-grid" style={{ maxWidth: 1240, margin: "0 auto" }}>
         <div>
           <div style={{ fontFamily: "var(--serif)", fontSize: 32 }}>Caminhos<span style={{ color: "var(--accent-soft)" }}>.</span></div>
           <p style={{ fontSize: 14, lineHeight: 1.7, color: "#9aa0a8", maxWidth: "32ch", margin: "16px 0 0" }}>
