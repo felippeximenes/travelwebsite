@@ -17,7 +17,7 @@ export function Hero() {
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     >
-      <Reveal className="mx-auto grid max-w-[1200px] min-h-screen grid-cols-1 items-center gap-8 px-6 pt-[calc(5.5rem+2rem)] md:grid-cols-2">
+      <Reveal className="mx-auto grid max-w-[1200px] min-h-screen grid-cols-1 items-center gap-8 px-6 pt-28 md:grid-cols-2">
         <div className="relative order-first min-h-[380px] md:order-none md:min-h-[420px]">
           <motion.span
             aria-hidden="true"
